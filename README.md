@@ -1,6 +1,6 @@
 # tea_system
 台灣飲料店資料庫  
 有三種資料表 分別為drink, drinkshop,brand  
-在更新新增時，因為drinkshop的shopname和brand的shopname為primary key且參考drink，故請確認drink有此種shopname  
-而drinkshop的brandname參考brand的primary key，但因drinkshop的brandname不為主鍵，故不一定需要有  
-但若需要brandname，則務必確認在於brand中  
+新增時需輸入品牌名稱、商家名稱、飲料種類、飲料名稱、價錢、大小、地址、營業時間  
+更新時輸入東西如上，並主要以商家名稱作修改  
+刪除時則輸入商家名稱或品牌名稱，會將與此有關的用cascade予此刪除  
