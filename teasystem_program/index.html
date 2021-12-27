@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta http-equiv='Content-type' content='text/html'; charset='utf-8'>
+        <meta http-equiv="pragma" Content="No-cache"> <!-- 清除cache-->
+    </head>
+    <center>
+        <body>
+            <form action="drink.php" method="get">
+                <h3> 查詢資料(以表格方式呈現資料庫內的資料)</h3>
+                <input type="submit" value="查詢">
+            </form>
+            <form action="add.php" method="post">
+                <h3> 新增資料</h3>
+                品牌名稱:<input type="text" name="brandname">
+                <br>
+                <br>
+                商家名稱:<input type="text" name="shopname">
+                <br>
+                <br>
+                飲料種類:<input type="text" name="category">
+                <br>
+                <br>
+                飲料名稱:<input type="text" name="name">
+                <br>
+                <br>
+                價錢:<input type="text" name="price">
+                <br>
+                <br>
+                大小:<input type="text" name="size">
+                <br>
+                <br>
+                地址:<input type="text" name="address">
+                <br>
+                <br>
+                營業時間:<input type="text" name="time">
+                <br>
+                <br>
+                備註:<input type="text" name="info">
+                <br>
+                <br>
+                <input type="submit" name="submit" value="新增">
+            </form>
+            <form action="update.php" method="post">
+                <h3> 修改資料(透過商家名稱將其他資料更新)</h3>
+                品牌名稱:<input type="text" name="brandname">
+                <br>
+                <br>
+                商家名稱:<input type="text" name="shopname">
+                <br>
+                <br>
+                飲料種類:<input type="text" name="category">
+                <br>
+                <br>
+                飲料名稱:<input type="text" name="name">
+                <br>
+                <br>
+                價錢:<input type="text" name="price">
+                <br>
+                <br>
+                大小:<input type="text" name="size">
+                <br>
+                <br>
+                地址:<input type="text" name="address">
+                <br>
+                <br>
+                營業時間:<input type="text" name="time">
+                <br>
+                <br>
+                備註:<input type="text" name="info">
+                <br>
+                <br>
+                <input type="submit" name="submit" value="修改">
+            </form>
+            <form action="delete.php" method="post">
+                <h3> 刪除資料(透過商家名稱或品牌名稱將其刪除)</h3>
+                商家名稱:<input type="text" name="shopname">
+                <br>
+                <br>
+                品牌名稱:<input type="text" name="brandname">
+                <br>
+                <br>
+                <input type="submit" name="submit" value="刪除">
+            </form>
+        </body>
+    </center>
+</html>
