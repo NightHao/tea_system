@@ -1,0 +1,41 @@
+body{
+    font-family: DFKai-SB;
+}
+.active{
+    color: black; 
+    font-weight: bold; 
+    font-size:20px;
+}
+
+.infoText{
+
+}
+#bar{
+    background-image: url("img/indexBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.block{
+    background : #f1d59d;
+    border-radius : 15px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 2px 2px 10px;
+}
+.clickable{
+    color: rgb(127, 68, 0);    
+    border-color :rgb(127, 68, 0);
+    border-width : 2px;
+    font-size:20px;
+}
+.clickable:hover{
+    color: rgb(255, 255, 255);    
+    background-color:rgb(127, 68, 0);
+}
+.container{
+    padding: 20px;
+    background:rgb(234, 234, 234);
+    border-radius: 10px;
+}

@@ -2,84 +2,40 @@
     <head>
         <meta http-equiv='Content-type' content='text/html'; charset='utf-8'>
         <meta http-equiv="pragma" Content="No-cache"> <!-- 清除cache-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <center>
         <body>
+            
+            
+            <div class="jumbotron text-center", id="bar">
+                <h1>台灣手搖茶系統</h1>
+                <p>喝......茶......</p> 
+            </div>
+            <ul class="nav nav-tabs nav-justified" >
+                <li class="nav-item col-md-2">
+                    <a class="nav-link active " href="index.html">首頁</a>
+                </li>
+                <!-- <li class="nav-item col-md-2 ">
+                    <a class="nav-link clickable" href="#" >搜尋</a>
+                </li> -->
+                <li class="nav-item col-md-2">
+                    <a class="nav-link clickable" href="edit.html">編輯</a>
+                </li>
+
+            </ul>
+
+            
+         
+
             <form action="drink.php" method="get">
                 <h3> 查詢資料(以表格方式呈現資料庫內的資料)</h3>
                 <input type="submit" value="查詢">
-            </form>
-            <form action="add.php" method="post">
-                <h3> 新增資料</h3>
-                品牌名稱:<input type="text" name="brandname">
-                <br>
-                <br>
-                商家名稱:<input type="text" name="shopname">
-                <br>
-                <br>
-                飲料種類:<input type="text" name="category">
-                <br>
-                <br>
-                飲料名稱:<input type="text" name="name">
-                <br>
-                <br>
-                價錢:<input type="text" name="price">
-                <br>
-                <br>
-                大小:<input type="text" name="size">
-                <br>
-                <br>
-                地址:<input type="text" name="address">
-                <br>
-                <br>
-                營業時間:<input type="text" name="time">
-                <br>
-                <br>
-                備註:<input type="text" name="info">
-                <br>
-                <br>
-                <input type="submit" name="submit" value="新增">
-            </form>
-            <form action="update.php" method="post">
-                <h3> 修改資料(透過商家名稱將其他資料更新)</h3>
-                品牌名稱:<input type="text" name="brandname">
-                <br>
-                <br>
-                商家名稱:<input type="text" name="shopname">
-                <br>
-                <br>
-                飲料種類:<input type="text" name="category">
-                <br>
-                <br>
-                飲料名稱:<input type="text" name="name">
-                <br>
-                <br>
-                價錢:<input type="text" name="price">
-                <br>
-                <br>
-                大小:<input type="text" name="size">
-                <br>
-                <br>
-                地址:<input type="text" name="address">
-                <br>
-                <br>
-                營業時間:<input type="text" name="time">
-                <br>
-                <br>
-                備註:<input type="text" name="info">
-                <br>
-                <br>
-                <input type="submit" name="submit" value="修改">
-            </form>
-            <form action="delete.php" method="post">
-                <h3> 刪除資料(透過商家名稱或品牌名稱將其刪除)</h3>
-                商家名稱:<input type="text" name="shopname">
-                <br>
-                <br>
-                品牌名稱:<input type="text" name="brandname">
-                <br>
-                <br>
-                <input type="submit" name="submit" value="刪除">
             </form>
         </body>
     </center>
