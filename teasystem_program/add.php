@@ -56,6 +56,7 @@
             $stmt = $db->prepare($query);
             $stmt->execute(array($shopname,$category,$name,$price,$size,$info));
         }
+        header("Location:drink.php");
      }
      else
      {
@@ -66,5 +67,5 @@
  {
      echo "error";
  }
- header("Location:drink.php");
+
 ?>
