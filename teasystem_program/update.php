@@ -12,7 +12,7 @@
  $time = $_POST["time"];
  $info = $_POST["info"];
 
- $query = ("update drink set category=?,name=?,price=?,size=?,info=? where shopname=?");
+ $query = ("update drink set category=?,price=?,size=?,info=? where shopname=?, name=?");
  $stmt = $db->prepare($query);
  $stmt->execute(array($category,$name,$price,$size,$info,$shopname));
 

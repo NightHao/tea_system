@@ -12,17 +12,59 @@
  $time = $_POST["time"];
  $info = $_POST["info"];
 
- $query = ("insert into drink values(?,?,?,?,?,?)");
- $stmt = $db->prepare($query);
- $stmt->execute(array($shopname,$category,$name,$price,$size,$info));
+ if (isset($shopname))
+ {
 
- $query = ("insert into brand values(?,?)");
- $stmt = $db->prepare($query);
- $stmt->execute(array($brandname,$shopname));
+     if(!empty($shopname))
+     {
+        $query = ("select * from brand where shopname='$shopname' AND brandname='$brandname'");
+        $stmt = $db->prepare($query);
+        $error = $stmt->execute();
+        $result = $stmt->fetchAll();
 
- $query = ("insert into drinkshop values(?,?,?,?)");
- $stmt = $db->prepare($query);
- $stmt->execute(array($shopname,$address,$brandname,$time));
-
+        if (count($result)>0) {
+            // 取得大於0代表有資料
+        }
+        else{
+            $query = ("insert into brand values(?,?)");
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($brandname,$shopname));
+        }
+            // 釋放資料庫查到的記憶體
+        $query = ("select * from drinkshop where shopname='$shopname' AND address='$address'");
+        $stmt = $db->prepare($query);
+        $error = $stmt->execute();
+        $result = $stmt->fetchAll();
+        if (count($result)>0) {
+            // 取得大於0代表有資料
+        }
+        else{
+            $query = ("insert into drinkshop values(?,?,?,?)");
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($shopname,$address,$brandname,$time));
+        }
+        
+        $query = ("select * from drink where shopname='$shopname' AND name='$name' AND price='$price'");
+        $stmt = $db->prepare($query);
+        $error = $stmt->execute();
+        $result = $stmt->fetchAll();
+        if (count($result)>0) {
+            // 取得大於0代表有資料
+        }
+        else{
+            $query = ("insert into drink values(?,?,?,?,?,?)");
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($shopname,$category,$name,$price,$size,$info));
+        }
+     }
+     else
+     {
+         echo "no input"."\n";
+     }
+ }
+ else
+ {
+     echo "error";
+ }
  header("Location:drink.php");
 ?>
