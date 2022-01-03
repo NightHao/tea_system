@@ -50,6 +50,8 @@
         $result = $stmt->fetchAll();
         if (count($result)>0) {
             // 取得大於0代表有資料
+            echo "錯誤訊息 -> 此primary key (shopname, name, price) 已存在";
+            goto a;
         }
         else{
             $query = ("insert into drink values(?,?,?,?,?,?)");
@@ -57,6 +59,7 @@
             $stmt->execute(array($shopname,$category,$name,$price,$size,$info));
         }
         header("Location:drink.php");
+        a:
      }
      else
      {
