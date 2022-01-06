@@ -14,7 +14,7 @@ body{
 }
 
 .block{
-    background : #d8be8c;
+    background : #f3c385;
     border-radius : 15px;
     padding: 5px;
     margin: 5px;
@@ -23,6 +23,7 @@ body{
 .clickable{
     color: rgb(127, 68, 0);    
     border-color :rgb(127, 68, 0);
+    background-color: white;
     border-width : 2px;
     font-size:20px;
 }
@@ -30,8 +31,6 @@ body{
     color: rgb(255, 255, 255);    
     background-color:rgb(127, 68, 0);
 }
-.container{
-    padding: 20px;
-    background:rgb(234, 234, 234);
-    border-radius: 10px;
+th{
+    font-style: bold;
 }
