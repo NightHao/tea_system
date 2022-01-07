@@ -42,6 +42,7 @@
         <div class="col-md-4" style="text-align:right;">
             <p>關鍵字搜尋</p>
             <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <!-- <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
         </div>
         <div class="container-fluid">
             <div class="row">

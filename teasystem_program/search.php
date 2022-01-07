@@ -47,6 +47,13 @@
                                 <input type="submit" value="查詢"class="btn clickable">
                         </p>
                         <p>找店家
+                        <select class="custom-select custom-select-sm mb-3">
+                            <option selected>Small Custom Select Menu</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select>
+
                                 <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                 <input type="submit" value="查詢"class="btn clickable">
                         </p>
