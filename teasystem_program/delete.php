@@ -9,7 +9,19 @@
  $stmt = $db->prepare($query);
  $stmt->execute(array($shopname));
 
+ $query = ("delete from drinkshop where shopname=?");
+ $stmt = $db->prepare($query);
+ $stmt->execute(array($shopname));
+
+ $query = ("delete from brand where shopname=?");
+ $stmt = $db->prepare($query);
+ $stmt->execute(array($shopname));
+
  $query = ("delete from brand where brandname=?");
+ $stmt = $db->prepare($query);
+ $stmt->execute(array($brandname));
+
+ $query = ("delete from drinkshop where brandname=?");
  $stmt = $db->prepare($query);
  $stmt->execute(array($brandname));
 
