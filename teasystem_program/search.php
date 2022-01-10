@@ -41,15 +41,25 @@
         <div class="container-fluid">
                 <div class="col-sm-3 block" style= 'margin-top: 100px'>
                     <div class= "container" >
-                        <form action="#.php" method="post">
+                        <form action="search_result.php" method="post">
                             <p>找品牌
-                                <select class="custom-select custom-select-sm mb-3">
-                                    <!-- 這裡放php -->
-                                    <option selected>無</option>
-                                    <option >50嵐</option>
-                                    <option >Coco</option>
-                                    <option >Comebuy</option>
-                                </select>
+                                <select class="custom-select custom-select-sm mb-3" name="brandname">
+                                    <option selected="selected">無</option>
+                                    <?php
+                                        header("Content-type:text/html;charset=utf-8");
+                                        include "db_conn.php";
+
+                                        $brandname = "";
+                                        $query = ("select brandname,count(shopname) as count_shop from brand group by brandname");
+                                        $stmt = $db->prepare($query);
+                                        $error = $stmt->execute();
+                                        $result = $stmt->fetchAll();
+                                        
+                                        for($i=0; $i < count($result); $i++){
+                                            echo "<option>".$result[$i]['brandname']."</option>";
+                                        }
+                                    ?>
+                                </select> 
                             </p>
                             <p>找店家
                                 <input class="form-control" id="myInput" type="text" placeholder="Search shop.." name = "shopname" >

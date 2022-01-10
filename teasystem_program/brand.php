@@ -2,23 +2,17 @@
     header("Content-type:text/html;charset=utf-8");
     include "db_conn.php";
     
-    echo "<table border='1'>
-    <tr>
-    <th>品牌名稱</th>
-    <th>商家數量</th>
-    </tr>";
 
     $brandname = "";
-    $query = ("select brandname,count(shopname) as count_shop from brand group by brandname");
+    $query = ("select brandname from brand group by brandname");
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
     
     for($i=0; $i < count($result); $i++){
-    echo "<tr>";
-    echo "<td>".$result[$i]['brandname']."</td>";
-    echo "<td>".$result[$i]['count_shop']."</td>";
-    echo "</tr>.";
+    // echo "<tr>";
+        echo "<option>".$result[$i]['brandname']."</option>";
+    // echo "<td>".$result[$i]['count_shop']."</td>";
     }
 	 
 	 
