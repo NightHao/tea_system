@@ -12,13 +12,13 @@
  $time = $_POST["time"];
  $info = $_POST["info"];
 
- $query = ("update drink set category=?,price=?,size=?,info=? where shopname=?, name=?");
+ $query = ("update drink set category=?,price=?,size=?,info=? where shopname=? and name=?");
  $stmt = $db->prepare($query);
- $stmt->execute(array($category,$name,$price,$size,$info,$shopname));
+ $stmt->execute(array($category,$price,$size,$info,$shopname, $name));
 
- $query = ("update drinkshop set address=?,brandname=?,time=? where shopname=?");
+ $query = ("update drinkshop set address=?,time=? where shopname=?");
  $stmt = $db->prepare($query);
- $stmt->execute(array($address,$brandname,$time,$shopname));
+ $stmt->execute(array($address,$time,$shopname));
 
  header("Location:drink.php");
 ?>
