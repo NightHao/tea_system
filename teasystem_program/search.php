@@ -37,19 +37,29 @@
                 </li>
             </ul>
         </nav>
-
+        <h3>搜尋</h3>
         <div class="container-fluid">
                 <div class="col-sm-3 block" style= 'margin-top: 100px'>
                     <div class= "container" >
-                        <form action="#.php" method="post">
+                        <form action="search_result.php" method="post">
                             <p>找品牌
-                                <select class="custom-select custom-select-sm mb-3">
-                                    <!-- 這裡放php -->
-                                    <option selected>無</option>
-                                    <option >50嵐</option>
-                                    <option >Coco</option>
-                                    <option >Comebuy</option>
-                                </select>
+                                <select class="custom-select custom-select-sm mb-3" name="brandname">
+                                    <option selected="selected">全部</option>
+                                    <?php
+                                        header("Content-type:text/html;charset=utf-8");
+                                        include "db_conn.php";
+
+                                        $brandname = "";
+                                        $query = ("select brandname from test_view");
+                                        $stmt = $db->prepare($query);
+                                        $error = $stmt->execute();
+                                        $result = $stmt->fetchAll();
+                                        
+                                        for($i=0; $i < count($result); $i++){
+                                            echo "<option>".$result[$i]['brandname']."</option>";
+                                        }
+                                    ?>
+                                </select> 
                             </p>
                             <p>找店家
                                 <input class="form-control" id="myInput" type="text" placeholder="Search shop.." name = "shopname" >
@@ -59,7 +69,7 @@
                             </p>
                             <input type="submit" value="查詢"class="btn clickable">
                         </form>
-                        <input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
+                        <input type = 'button' onclick='history.back()' value='上一頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
                     </div>
                 </div>
                 <!-- <div class="col-lg">
