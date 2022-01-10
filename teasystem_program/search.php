@@ -37,14 +37,14 @@
                 </li>
             </ul>
         </nav>
-        <h3>搜尋</h3>
+
         <div class="container-fluid">
                 <div class="col-sm-3 block" style= 'margin-top: 100px'>
                     <div class= "container" >
                         <form action="search_result.php" method="post">
                             <p>找品牌
                                 <select class="custom-select custom-select-sm mb-3" name="brandname">
-                                    <option selected="selected">無</option>
+                                    <option selected="selected">全部</option>
                                     <?php
                                         header("Content-type:text/html;charset=utf-8");
                                         include "db_conn.php";
