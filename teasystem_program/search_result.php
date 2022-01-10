@@ -56,7 +56,7 @@
 							if(!empty($name)){
 								$isjoin = 1;
 								$type=1;
-								$query = ("select * from drink natural left outer join brand natural join drinkshop where shopname=? AND name=? AND brandname=?");
+								$query = ("select * from drink natural right outer join brand natural left join drinkshop where shopname=? AND name=? AND brandname=?");
 								$stmt = $db->prepare($query);
 								$stmt->execute(array($shopname,$name,$brandname));
 								$error = $stmt->execute();
@@ -83,7 +83,7 @@
 							else{
 								$isjoin = 1;
 								$type=2;
-								$query = ("select * from drinkshop natural left outer join brand  where shopname=? AND brandname=?");
+								$query = ("select * from brand_drinkshop  where shopname=? AND brandname=?");
 								$stmt = $db->prepare($query);
 								$stmt->execute(array($shopname,$brandname));
 								$error = $stmt->execute();
@@ -107,7 +107,7 @@
 							if(!empty($name)){
 								$isjoin = 1;
 								$type=3;
-								$query = ("select * from drink natural left outer join brand  where name=? AND brandname=?");
+								$query = ("select * from brand_drink  where name=? AND brandname=?");
 								$stmt = $db->prepare($query);
 								$stmt->execute(array($name,$brandname));
 								$error = $stmt->execute();
@@ -137,11 +137,15 @@
 								$error = $stmt->execute();
 								$result = $stmt->fetchAll();
 								col_select($type);
+								
 								for($i=0; $i < count($result); $i++){
 									$brandname = $result[$i]['brandname'];
 									$shopname = $result[$i]['shopname'];
+									echo "<tr>";
 									brand_Row($brandname, $shopname);
+									echo "</tr>";
 									}
+
 							}
 						}
 					}
@@ -151,7 +155,7 @@
 						if(!empty($name)){
 							$isjoin = 1;
 							$type=5;
-							$query = ("select * from drink natural left outer join drinkshop where shopname=? AND name=?");
+							$query = ("select * from drink_drinkshop where shopname=? AND name=?");
 							$stmt = $db->prepare($query);
 							$stmt->execute(array($shopname,$name));
 							$error = $stmt->execute();
@@ -206,7 +210,6 @@
 						$result = $stmt->fetchAll();
 						col_select($type);
 						for($i=0; $i < count($result); $i++){
-							$brandname = $result[$i]['brandname'];
 							$shopname = $result[$i]['shopname'];
 							$category = $result[$i]['category'];
 							$name = $result[$i]['name'];

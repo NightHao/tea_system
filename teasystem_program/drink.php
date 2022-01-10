@@ -65,7 +65,7 @@
                             header("Content-type:text/html;charset=utf-8");
                             include "db_conn.php";
                             $shopname = "";
-                            $query = ("select * from drink natural left outer join brand natural join drinkshop");
+                            $query = ("(select * from drink natural right outer join brand natural left join drinkshop)");
                             $stmt = $db->prepare($query);
                             $error = $stmt->execute();
                             $result = $stmt->fetchAll();

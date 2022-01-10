@@ -50,7 +50,7 @@
                                         include "db_conn.php";
 
                                         $brandname = "";
-                                        $query = ("select brandname,count(shopname) as count_shop from brand group by brandname");
+                                        $query = ("select brandname from all_brand");
                                         $stmt = $db->prepare($query);
                                         $error = $stmt->execute();
                                         $result = $stmt->fetchAll();
