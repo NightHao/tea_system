@@ -39,32 +39,30 @@
         </nav>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 " style= 'margin-top: 100px'>
+                <div class="col-sm-3 block" style= 'margin-top: 100px'>
                     <div class= "container" >
-                        <p>找品牌
-                                <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                <input type="submit" value="查詢"class="btn clickable">
-                        </p>
-                        <p>找店家
-                        <select class="custom-select custom-select-sm mb-3">
-                            <option selected>Small Custom Select Menu</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
-                        </select>
-
-                                <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                <input type="submit" value="查詢"class="btn clickable">
-                        </p>
-                        <p>找飲料
-                                <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                <input type="submit" value="查詢"class="btn clickable">
-                        </p>
+                        <form action="#.php" method="post">
+                            <p>找品牌
+                                <select class="custom-select custom-select-sm mb-3">
+                                    <!-- 這裡放php -->
+                                    <option selected>無</option>
+                                    <option >50嵐</option>
+                                    <option >Coco</option>
+                                    <option >Comebuy</option>
+                                </select>
+                            </p>
+                            <p>找店家
+                                <input class="form-control" id="myInput" type="text" placeholder="Search shop.." name = "shopname" >
+                            </p>
+                            <p>找飲料
+                                <input class="form-control" id="myInput" type="text" placeholder="Search drink.."name = "drinkname" >
+                            </p>
+                            <input type="submit" value="查詢"class="btn clickable">
+                        </form>
                         <input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
                     </div>
                 </div>
-                <div class="col-lg">
+                <!-- <div class="col-lg">
                     <table class='block table'>
                         <thaed>
                             <tr>
@@ -118,8 +116,7 @@
                             ?>
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div> -->
         </div>
         
     </body>
