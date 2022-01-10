@@ -17,7 +17,30 @@
     
     <center>
         <body>
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+                <ul class="nav navbar-nav" >
+                    <li class="nav-item ">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/cuplogo.png" alt="Logo" style="width:40px;">
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="edit.html">編輯</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="jumbotron text-center", id="bar">
+                <h1>台灣手搖茶系統</h1>
+                <p>喝......茶......</p> 
+            </div>
+			<div class="container-fluid">
+				<h3>搜尋結果</h3>
+                <table class='block table col-lg-8'>
 			<?php
+			
 			header("Content-type:text/html;charset=utf-8");
 			include "db_conn.php";
 			$brandname = $_POST["brandname"];//
@@ -26,7 +49,7 @@
 			$isjoin=0;
 			if(isset($shopname) || isset($brandname) || isset($name) ){
 				//brandname不為空
-				if(!empty($brandname) || $brandname == "無"){
+				if(strcmp($brandname, "無")!= 0){
 					//brandname、shopname不為空
 					if(!empty($shopname)){
 						//brandname、shopname、name不為空(法1)
@@ -160,7 +183,7 @@
 					}
 				}
 				//name不為空,brandname、shopname為空(法7)
-				else if(!empty(name)){
+				else if(!empty($name)){
 					$isjoin = 0;
 					$query = ("select * from drink where name=?");
 					$stmt = $db->prepare($query);
@@ -238,9 +261,10 @@
 			echo "<td>".$info."</td>";
 			}
 
-			echo "<br><input type = 'button' onclick='history.back()' value='Go Back'></input>"
 			?>
-			<script src="tilt.jquery.js"></script>
+				</table>
+		</div>
+		<input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
 		</body>
 
 	</center>
