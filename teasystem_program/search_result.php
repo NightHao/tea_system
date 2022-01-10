@@ -49,7 +49,7 @@
 			$isjoin=0;
 			if(isset($shopname) || isset($brandname) || isset($name) ){
 				//brandname不為空
-				if(strcmp($brandname, "無")!= 0){
+				if(strcmp($brandname, "全部")!= 0){
 					//brandname、shopname不為空
 					if(!empty($shopname)){
 						//brandname、shopname、name不為空(法1)
