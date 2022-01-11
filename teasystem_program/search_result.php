@@ -383,7 +383,6 @@
 
 				function name_Row($brandname, $shopname, $category, $name, $price, $size, $info, $isjoin){
 					if($isjoin == 0){
-					echo "<td>".$brandname."</td>";
 					echo "<td>".$shopname."</td>";			
 				}
 				echo "<td>".$category."</td>";
