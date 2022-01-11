@@ -37,7 +37,7 @@
                 </li>
             </ul>
         </nav>
-
+        <h3>搜尋</h3>
         <div class="container-fluid">
                 <div class="col-sm-3 block" style= 'margin-top: 100px'>
                     <div class= "container" >
@@ -69,7 +69,7 @@
                             </p>
                             <input type="submit" value="查詢"class="btn clickable">
                         </form>
-                        <input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
+                        <input type = 'button' onclick='history.back()' value='上一頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
                     </div>
                 </div>
                 <!-- <div class="col-lg">

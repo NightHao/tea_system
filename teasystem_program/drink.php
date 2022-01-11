@@ -46,7 +46,7 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <table class='block table col-lg'>
+                <table class='block table col-lg' >
                     <thaed>
                         <tr>
                             <th class="font-weight-bolder">品牌名稱</th>
@@ -101,7 +101,7 @@
                 </table>
             </div>
         </div>
-        <input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
+        <input type = 'button' onclick='history.back()' value='上一頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
     </body>
     </center>
 </html>

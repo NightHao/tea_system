@@ -394,7 +394,7 @@
 			?>
 				</table>
 			</div>
-		<input type = 'button' onclick='history.back()' value='回首頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
+		<input type = 'button' onclick='history.back()' value='上一頁' class="btn clickable rounded-circle" style="position: fixed; bottom: 40px;left: 40px;"></input>
 
 		</body>
 
